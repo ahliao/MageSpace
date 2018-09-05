@@ -9,42 +9,26 @@
 	and may not be redistributed without written permission.
 */
 
+#ifndef _GAMEOBJECT_H
+#define _GAMEOBJECT_H
+
 // Includes
 #include <string>
-
-// Defined classes
-struct Point2D 
-{
-	double x;
-	double y;
-};
-
-struct Vector2D
-{
-	double vx;
-	double vy;
-};
 
 class GameObject
 {
 public:
 	GameObject();
-	GameObject(std::string name, Point2D pos, int id);
+	GameObject(std::string name, int id);
 	~GameObject();
 
 	// Accessors
 	std::string getName() const;
 	void setName(const std::string &name);
 
-	Point2D getPos() const;
-	void setPos(const Point2D &pos);
-
-	Vector2D getVel() const;
-	void setVel(const Vector2D &vel);
-
 protected:
 	std::string m_name;
-	Point2D m_pos;
-	Vector2D m_vel;
 	int m_id;
 };
+
+#endif

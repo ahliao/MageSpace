@@ -1,7 +1,5 @@
 #include "MainWindow.h"
 
-#include "SpaceObject.h"
-
 MainWindow::MainWindow()
 {
 	init();
@@ -76,10 +74,15 @@ bool MainWindow::init()
 
 bool MainWindow::loadMedia()
 {
+	bool success;
 	// Load the required resources
+	m_textureManager = new TextureManager();
+	m_textureManager->loadTextures(m_renderer, "resources/TextureMap.txt");
 
+	m_scene = new WorldScene(640, 480, m_textureManager);
+	m_scene->loadScene(m_renderer);
 
-	return true;
+	return success;
 }
 
 void MainWindow::show()
@@ -101,14 +104,23 @@ void MainWindow::show()
 			{
 				quit = true;
 			}
+
+			m_scene->handleInput(e);
 		}
 
 		//Clear screen
 		SDL_SetRenderDrawColor( m_renderer, 0x00, 0x00, 0x00, 0xFF );
 		SDL_RenderClear( m_renderer );
 
+		m_scene->update();
+
+		m_scene->render(m_renderer);
+
+		//Update current frame
+		//m_planet.update();
+
 		//Render current frame
-		//gTextTexture.render( ( SCREEN_WIDTH - gTextTexture.getWidth() ) / 2, ( SCREEN_HEIGHT - gTextTexture.getHeight() ) / 2 );
+		//m_planet.render( m_renderer, 0, 0);
 
 		//Update screen
 		SDL_RenderPresent( m_renderer );
@@ -118,7 +130,7 @@ void MainWindow::show()
 void MainWindow::close()
 {
 	//Free loaded images
-	
+	//m_planet.free();
 
 	//Free global font
 	

@@ -1,8 +1,15 @@
+#ifndef _MAINWINDOW_H
+#define _MAINWINDOW_H
+
 //Using SDL and standard IO
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_ttf.h>
+#include <SDL.h>
+#include <SDL_image.h>
+#include <SDL_ttf.h>
 #include <stdio.h>
+
+#include "TextureManager.h"
+#include "SpaceObject.h"
+#include "WorldScene.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
@@ -25,4 +32,12 @@ private:
 
 	//The window renderer
 	SDL_Renderer* m_renderer;	
+
+	// Test
+	WorldScene* m_scene;
+
+	// Texture Manager
+	TextureManager* m_textureManager;
 };
+
+#endif

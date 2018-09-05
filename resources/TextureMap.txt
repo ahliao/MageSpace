@@ -1,0 +1,5 @@
+ID	Filename	AlphaR	AlphaG	AlphaB	Rows	Cols
+1	resources/Planet_A.png	255	0	0	1	1
+2	resources/ship_A.png	255	0	255	1	2
+3	resources/BG_Stars.png	0	0	0	1	2
+4	resources/Ship_Tiles.png	0	0	0	2	3

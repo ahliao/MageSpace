@@ -16,10 +16,6 @@
 GameObject::GameObject()
 {
 	m_name = "Default Name";
-	m_pos.x = 0;
-	m_pos.y = 0;
-	m_vel.vx = 0;
-	m_vel.vy = 0;
 }
 
 // Deconstructor
@@ -36,22 +32,4 @@ std::string GameObject::getName() const
 void GameObject::setName(const std::string &name)
 {
 	m_name = name;
-}
-
-Point2D GameObject::getPos() const
-{
-	return m_pos;
-}
-void GameObject::setPos(const Point2D &pos)
-{
-	m_pos = pos;
-}
-
-Vector2D GameObject::getVel() const
-{
-	return m_vel;
-}
-void GameObject::setVel(const Vector2D &vel)
-{
-	m_vel = vel;
 }

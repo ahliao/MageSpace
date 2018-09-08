@@ -177,7 +177,8 @@ void SpaceObject::setFrameSpeed(const int &s)
 	m_textureAnim.setFrameSpeed(s);
 }
 
-void SpaceObject::render(SDL_Renderer* gRenderer, int camX, int camY, double camScale, SDL_Rect* clip)
+void SpaceObject::render(SDL_Renderer* gRenderer, int camX, int camY, double camScale, SDL_Rect* clip,
+	double angle, SDL_Point* center, SDL_RendererFlip flip )
 {
 	//if (m_textureAnim == NULL) return;
 
@@ -194,7 +195,7 @@ void SpaceObject::render(SDL_Renderer* gRenderer, int camX, int camY, double cam
 	//Render to screen
 	//SDL_Rect* m_currentClip = &m_SpriteClips[ m_frame / m_frameSpeed ]; 
 
-	m_textureAnim.render(gRenderer, renderQuad, m_rotation);
+	m_textureAnim.render(gRenderer, renderQuad, m_rotation, center, flip);
 }
 
 void SpaceObject::update()

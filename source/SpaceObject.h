@@ -66,7 +66,8 @@ public:
 	void setFrameSpeed(const int &s);
 
 	//Renders texture at given point
-	virtual void render( SDL_Renderer* gRenderer, int camX, int camY, double camScale = 1, SDL_Rect* clip = NULL );
+	virtual void render( SDL_Renderer* gRenderer, int camX, int camY, double camScale = 1, SDL_Rect* clip = NULL,
+		double angle = 0.0, SDL_Point* center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE );
 
 	// Updates the position of the object
 	virtual void update();

@@ -29,7 +29,14 @@ private:
 	std::vector<ShipTile> m_tiles;
 
 	int m_subspaceSpeed;
+	double m_rotation;
 	Vector2D m_rotationSpeed;
+	double m_rotationVel;
+	Vector2D m_vel;
+
+	Point2D m_pos;
+	int m_width;
+	int m_height;
 
 	// Engine Activation
 	bool m_forwardEngineOn;

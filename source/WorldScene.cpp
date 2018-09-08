@@ -112,7 +112,7 @@ void WorldScene::update()
 
 void WorldScene::handleInput(SDL_Event& e)
 {
-	//m_player->handleInput(e);
+	m_player->handleInput(e);
 
 	if( e.type == SDL_KEYDOWN && e.key.repeat == 0 )
     {

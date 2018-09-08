@@ -95,7 +95,7 @@ void LTextureAnimation::render(SDL_Renderer* gRenderer, SDL_Rect renderQuad,
 	//Render to screen
 	SDL_Rect* m_currentClip = &m_SpriteClips[ m_frame / m_frameSpeed ]; 
 
-	m_texture->render(gRenderer, renderQuad, m_currentClip, angle);
+	m_texture->render(gRenderer, renderQuad, m_currentClip, angle, center, flip);
 }
 
 void LTextureAnimation::update()

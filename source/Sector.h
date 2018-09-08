@@ -23,6 +23,6 @@ public:
 
 private:
 	
-}
+};
 
 #endif
